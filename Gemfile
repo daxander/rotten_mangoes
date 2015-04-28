@@ -30,6 +30,8 @@ gem 'spring',        group: :development
 gem 'bcrypt'
 gem 'bcrypt-ruby'
 
+gem 'carrierwave'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
