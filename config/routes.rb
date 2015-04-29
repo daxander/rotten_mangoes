@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users
+    get '/preview_user/:id', to: '/admin/users#preview_mode', as: 'preview'
   end
   
   resources :sessions, only: [:new, :create, :destroy]

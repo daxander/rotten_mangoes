@@ -14,6 +14,10 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def preview_mode
+    session[:user_id] = params[:id]
+    redirect_to movies_path
+  end
 
 
 
@@ -23,7 +27,7 @@ class Admin::UsersController < ApplicationController
     if !current_user
       flash[:alert] = 'You need to log in!'
       redirect_to '/sessions/new'
-    elsif !current_user.admin
+    elsif !session[:actual_id]
       flash[:alert] = "You are not an admin!"
       redirect_to '/'
     end
