@@ -2,5 +2,9 @@
 
 <h2>
   <%= @user.full_name %> (<%= link_to "edit", edit_admin_user_path(@user) %>,
-  <%= link_to "delete", admin_user_path(@user), method: :delete, confirm: "You sure?" %>)
+  <%= link_to "delete", user_path(@user), method: :delete, confirm: "You sure?" %>)
+  <hr>
 </h2>
+  <p>Email: <%= @user.email %></p>
+  <p>Created: <%= @user.created_at %></p>
+  <p>Updated: <%= @user.updated_at %></p>
