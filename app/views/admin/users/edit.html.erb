@@ -1,6 +1,8 @@
- <%= link_to "Back to this user", admin_user_path(@user) %>
- <h1><%= @user.full_name %></h1>
- <%= form_for @user, html: {multipart: true} do |f| %>
+
+  <%= link_to "Back to all users", admin_users_path(@user) %>
+
+ <h2><%=@user.full_name%></h2> 
+ <%= form_for @user do |f| %>
 
 
       <div>
@@ -16,11 +18,19 @@
         <%= f.text_field "email" %>
       </div>
       <div>
+
+        <%= f.label "created_at" %><br>
+        <%= f.text_field "created_at" %>
+      </div>
+      <div>
+        <%= f.label "updated_at" %><br>
+        <%= f.text_field "updated_at" %>
+      </div>
+      <div>
         <%= f.label "admin" %><br>
         <%= f.select(:admin, ['true','false'], {}) %>
       </div>
-       <div>
+      <div>
         <%= f.submit "Submit" %> 
       </div>
-
     <% end %>

@@ -1,12 +1,9 @@
-    <h1>Rotten Mangoes Users</h1>
-    
-    <hr>
-    <% @users.each do |user| %>
-    <div>
-      <h2><%= link_to user.full_name, admin_user_path(user) %></h2>
+
+<h1>Admin Management</h1>
+
+<% @users.each do |user| %>
+<h2><%= link_to user.full_name, admin_user_path(user) %></h2>
+<hr>
 
 
-    </div>   
-    <hr >     
-   
-    <% end %>
+<% end %>

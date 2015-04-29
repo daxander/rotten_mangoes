@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class Admin::UsersControllerTest < ActionController::TestCase
+<<<<<<< HEAD
   test "should get index" do
     get :index
     assert_response :success
@@ -16,4 +17,9 @@ class Admin::UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+=======
+  # test "the truth" do
+  #   assert true
+  # end
+>>>>>>> feature/admins
 end

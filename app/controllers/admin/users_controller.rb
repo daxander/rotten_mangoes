@@ -20,27 +20,21 @@ class Admin::UsersController < ApplicationController
   end
 
 
-  # def new
-  #   @user = User.new
-  # end
+  def preview_mode
+    session[:user_id] = params[:id]
+    redirect_to movies_path
+  end
 
-  # def create
-  #   @user = User.new(user_params)
 
-  #       if @user.save
-  #         redirect_to users_path, notice: "#{@user.full_name} was submitted successfully!"
-  #       else
-  #         render :new
-  #       end
-  # end
 
-  private
+  protected
+
 
   def ensure_admin
     if !current_user
       flash[:alert] = 'You need to log in!'
       redirect_to '/sessions/new'
-    elsif !current_user.admin
+    elsif !session[:actual_id]
       flash[:alert] = "You are not an admin!"
       redirect_to '/'
     end

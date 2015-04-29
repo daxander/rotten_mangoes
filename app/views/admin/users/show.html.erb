@@ -1,10 +1,13 @@
- <%= link_to "Back to all users", admin_users_path %>
 
- <h2>
-    <%= @user.full_name %> (<%= link_to "edit", edit_admin_user_path(@user) %>,
-    <%= link_to "delete", admin_user_path(@user), method: :delete, confirm: "You sure?" %>)
-      <h3>Email: <%= @user.email %></h3>
-      <h3>Date Created: <%= @user.created_at %></h3>
-      <h3>Date Updated: <%= @user.updated_at %></h3>
+  <%= link_to "Back to all users", admin_users_path(@user) %>
 
-  </h2>
+<h2>
+  <%= @user.full_name %> (<%= link_to "edit", edit_admin_user_path(@user) %>,
+  <%= link_to "delete", user_path(@user), method: :delete, data: {confirm: "You sure?"} %>)
+  <%= link_to "Switch to this user", admin_preview_path(@user.id) %>
+  <hr>
+</h2>
+  <p>Email: <%= @user.email %></p>
+  <p>Created: <%= @user.created_at %></p>
+  <p>Updated: <%= @user.updated_at %></p>
+

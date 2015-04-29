@@ -7,9 +7,16 @@
         <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
       <% end %>
   </small>
-    <small>
+
+  <small>
     <% if current_user && current_user.admin? %>
-     (<%= link_to "Admin Management", admin_users_path %>)
-     <% end%>
+        (<%= link_to "Admin Management", admin_users_path %>)
+      <% end %>
   </small>
+  <small>
+  <% if session[:user_id].to_i != session[:actual_id] %>
+      <%= link_to "Back to Admin", admin_preview_path(session[:actual_id]) %>
+      <%end%>
+  </small>
+
 </footer>

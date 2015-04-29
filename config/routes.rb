@@ -1,31 +1,19 @@
 Rails.application.routes.draw do
-  # namespace :admin do
-  # get 'admin/users'
-  # end
 
-  # namespace :admin do
-  # get 'admin/users/new'
-  # end
 
-  # namespace :admin do
-  # get 'admin/users/create'
-  # end
 
-  # get 'sessions/new'
-
-  # get 'sessions/create'
-
-  # get 'users/new'
-
-  # get 'users/create'
 
   resources :movies do
     resources :reviews, only: [:new, :create]
-  end
+
+
+  resources :users
+
   namespace :admin do
     resources :users
+    get '/preview_user/:id', to: '/admin/users#preview_mode', as: 'preview'
   end
-  resources :users
+  
   resources :sessions, only: [:new, :create, :destroy]
   root to: 'movies#index'
 
