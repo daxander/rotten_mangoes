@@ -1,0 +1,31 @@
+ <h2>user.full_name</h2> 
+ <%= form_for @user, html: {multipart: true} do |f| %>
+
+      <div>
+        <%= f.label "firstname" %><br>
+        <%= f.text_field "firstname" %>
+      </div>
+      <div>
+        <%= f.label "lastname" %><br>
+        <%= f.text_field "lastname" %>
+      </div>
+      <div>
+        <%= f.label "email" %><br>
+        <%= f.text_field "email" %>
+      </div>
+      <div>
+        <%= f.label "created_at" %><br>
+        <%= f.text_field "created_at" %>
+      </div>
+      <div>
+        <%= f.label "updated_at" %><br>
+        <%= f.text_field "updated_at" %>
+      </div>
+      <div>
+        <%= f.label "admin" %><br>
+        <%= f.select(:admin, ['true','false'], {}) %>
+      </div>
+      <div>
+        <%= f.submit "Submit" %> 
+      </div>
+    <% end %>
