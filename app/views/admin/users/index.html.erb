@@ -1,0 +1,12 @@
+    <h1>Rotten Mangoes Users</h1>
+    
+    <hr>
+    <% @users.each do |user| %>
+    <div>
+      <h2><%= link_to user.full_name, admin_user_path(user) %></h2>
+
+
+    </div>   
+    <hr >     
+   
+    <% end %>

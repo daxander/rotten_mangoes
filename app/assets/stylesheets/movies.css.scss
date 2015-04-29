@@ -10,6 +10,14 @@ body.movies.show {
   }  
 }
 
+body.movies.show {
+  .poster img {
+    max-height: 150px;
+    max-width: 150px;
+    box-shadow: 10px 10px 5px #888888;
+  }  
+}
+
 body.movies.index {
   .poster img {
     max-height: 200px;

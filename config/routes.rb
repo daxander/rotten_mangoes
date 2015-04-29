@@ -1,17 +1,31 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  # namespace :admin do
+  # get 'admin/users'
+  # end
 
-  get 'sessions/create'
+  # namespace :admin do
+  # get 'admin/users/new'
+  # end
 
-  get 'users/new'
+  # namespace :admin do
+  # get 'admin/users/create'
+  # end
 
-  get 'users/create'
+  # get 'sessions/new'
+
+  # get 'sessions/create'
+
+  # get 'users/new'
+
+  # get 'users/create'
 
   resources :movies do
     resources :reviews, only: [:new, :create]
   end
-  resources :users, only: [:new, :create]
-  resources :sessions, only: [:new, :create]
+  namespace :admin do
+    resources :users
+  end
+  resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root to: 'movies#index'
 

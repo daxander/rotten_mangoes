@@ -1,0 +1,26 @@
+ <%= link_to "Back to this user", admin_user_path(@user) %>
+ <h1><%= @user.full_name %></h1>
+ <%= form_for @user, html: {multipart: true} do |f| %>
+
+
+      <div>
+        <%= f.label "firstname" %><br>
+        <%= f.text_field "firstname" %>
+      </div>
+      <div>
+        <%= f.label "lastname" %><br>
+        <%= f.text_field "lastname" %>
+      </div>
+      <div>
+        <%= f.label "email" %><br>
+        <%= f.text_field "email" %>
+      </div>
+      <div>
+        <%= f.label "admin" %><br>
+        <%= f.select(:admin, ['true','false'], {}) %>
+      </div>
+       <div>
+        <%= f.submit "Submit" %> 
+      </div>
+
+    <% end %>
