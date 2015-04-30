@@ -7,11 +7,15 @@
       <%= csrf_meta_tags %>
       <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
     </head>
+    
     <body class="<%= params[:controller] %> <%= params[:action] %>">
       <% flash.each do |key, value| %>
         <%= content_tag(:div, value) %>
       <% end %>
+      <%= render 'layouts/header' %>
+      <div class="main-container">
       <%= yield %>
+      </div>
       <%= render 'layouts/footer' %>
     </body>
     </html>

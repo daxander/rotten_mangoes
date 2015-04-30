@@ -1,23 +1,21 @@
-    <h1>Rotten Mangoes</h1>
-    <%= link_to "Submit a movie!", new_movie_path, class: "submit-button" %>
-    <hr>
-    <% @movies.each do |movie| %>
-    <div><div class="left">
+<hr>
+<div class="movie-box">
+<% @movies.each do |movie| %>
+  <!-- <div class="left"> -->
       <% if movie.poster_image_url? %>
-    <%= link_to image_tag(movie.poster_image_url), movie_path(movie), class: "poster"%>
-  <% elsif movie.image? %>
-    <%= image_tag movie.image_url.to_s, class: "poster" %>
-  <% end %>
-    </div>
-    <div>
+        <%= link_to image_tag(movie.poster_image_url), movie_path(movie), class: "poster"%>
+      <% elsif movie.image? %>
+        <%= image_tag movie.image_url.to_s, class: "poster" %>
+      <% end %>
+   <!--  </div>
+    <div> -->
       <h2><%= link_to movie.title, movie_path(movie) %></h2>
       <h3><%= formatted_date(movie.release_date) %></h3>
       <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
       <p><%= movie.description %></p>
     </div>   
-    <hr class="clear-both">     
-    </div>
-    <% end %>
+  <!-- <hr class="clear-both">      -->
+<% end %>
 
 
-    
+  

@@ -18,6 +18,22 @@ body.movies.show {
   }  
 }
 
+body.movies.search {
+  .poster {
+    max-height: 150px;
+    max-width: 150px;
+    box-shadow: 10px 10px 5px #888888;
+  }  
+}
+
+body.movies.search {
+  .poster img {
+    max-height: 150px;
+    max-width: 150px;
+    box-shadow: 10px 10px 5px #888888;
+  }  
+}
+
 body.movies.index {
   .poster img {
     max-height: 200px;
@@ -46,15 +62,16 @@ a:visited {
 
 body {
   background: (radial-gradient(100px 100px, #82DCDC 200px, #027E7E 600px));
-  padding: 30px;
+  margin: 0px;
   font-family: "Open Sans", sans-serif;
 }
 
 h1 {
-  font-size: 50px;
-  text-align: center;
+  font-size: 40px;
   text-shadow: -1px -1px 1px #000, 1px 1px 1px #ccc;
-  color: #0A2A73;
+  color: #4564AD;
+  margin-left:20px;
+  margin-bottom: 0px;
 }
 
 h2 {
@@ -78,6 +95,10 @@ h2 {
   margin: 10px;
 }
 
+.movies.search div {
+  margin: 10px;
+}
+
 .left { 
   float: left;
   
@@ -89,5 +110,37 @@ footer {
 
 .clear-both {
   clear: both;
+}
+
+header.head  { 
+  // position:fixed;
+  z-index: 10;
+  background-color: #4564AD;
+  overflow: auto;
+  width: 100%;
+  box-shadow: 5px 5px 5px #070000;
+
+}
+
+header h3 {
+  float: right;
+
+  margin: 20px;
+}
+
+.main-container {
+  padding: 30px;
+}
+
+.submit-button {
+  margin: 20px;
+}
+.search-form {
+  float: right;
+  margin: 20px;
+}
+
+.fixed {
+  top: 30px;
 }
 

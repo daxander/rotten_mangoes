@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
 
-
+  post '/movies/search', to: 'movies#search', as: 'search'
 
   resources :movies do
     resources :reviews, only: [:new, :create]
+  end
+
+
+
 
 
   resources :users
